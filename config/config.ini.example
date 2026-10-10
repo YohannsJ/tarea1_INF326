@@ -1,0 +1,5 @@
+[CONNECTION]
+USER_PASSWORD = usuario:clave
+SERVER = host.rmq.cloudamqp.com
+PORT = 5671
+VHOST = vhost

@@ -1,0 +1,8 @@
+[
+  {"id": 1, "fecha_local": "2026-10-01 00:12:41", "fecha_utc": "2026-10-01 03:12:41", "latitud": -20.35, "longitud": -70.45, "profundidad_km": 38.2, "magnitud": 5.8, "tipo_magnitud": "Mw", "referencia": "35 km al O de Iquique", "agencia": "CSN"},
+  {"id": 2, "fecha_local": "2026-10-01 14:45:10", "fecha_utc": "2026-10-01 17:45:10", "latitud": -30.12, "longitud": -71.52, "profundidad_km": 52.0, "magnitud": 6.1, "tipo_magnitud": "Mw", "referencia": "28 km al SO de Ovalle", "agencia": "CSN"},
+  {"id": 3, "fecha_local": "2026-10-02 05:21:07", "fecha_utc": "2026-10-02 08:21:07", "latitud": -33.1, "longitud": -72.0, "profundidad_km": 24.5, "magnitud": 4.9, "tipo_magnitud": "Ml", "referencia": "40 km al O de Valparaíso", "agencia": "CSN"},
+  {"id": 4, "fecha_local": "2026-10-02 19:30:55", "fecha_utc": "2026-10-02 22:30:55", "latitud": -36.9, "longitud": -73.4, "profundidad_km": 30.8, "magnitud": 5.5, "tipo_magnitud": "Ml", "referencia": "22 km al O de Concepción", "agencia": "CSN"},
+  {"id": 5, "fecha_local": "2026-10-02 22:05:33", "fecha_utc": "2026-10-03 01:05:33", "latitud": -53.4, "longitud": -71.2, "profundidad_km": 10.0, "magnitud": 5.2, "tipo_magnitud": "Ml", "referencia": "30 km al SO de Punta Arenas", "agencia": "CSN"},
+  {"id": 6, "fecha_local": "2026-10-03 11:58:20", "fecha_utc": "2026-10-03 14:58:20", "latitud": -33.6, "longitud": -78.8, "profundidad_km": 15.0, "magnitud": 5.0, "tipo_magnitud": "Mw", "referencia": "95 km al O de Juan Fernández", "agencia": "CSN"}
+]
