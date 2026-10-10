@@ -1,24 +1,21 @@
 # INF326 — Tarea 1: Sistema de notificación de sismos
 
-Sistema publish-subscribe con RabbitMQ (CloudAMQP) y consulta del detalle por HTTP mediante FastAPI. Cada ciudad recibe los eventos y consulta el detalle solo si el epicentro está a menos de 500 km.
-
-## Integrante y rol
+Sistema publish-subscribe con RabbitMQ (CloudAMQP) y consulta del detalle por HTTP mediante FastAPI.
 
 | Nombre | Rol |
 | --- | --- |
-| Yohanns Jara | Diseño de arquitectura, implementación del notificador, suscriptores y servicio HTTP, pruebas y elaboración del informe. |
-
+| Yohanns Jara | 201830035-7|
 ## Instrucciones de ejecución
 
 ### Prerrequisitos
 
 - Python 3.10 o superior y `pip`.
 - Una instancia de RabbitMQ en CloudAMQP con acceso AMQPS (TLS).
-- Credenciales de conexión en `config/config.ini`. Este archivo es privado y está excluido de Git.
+- Credenciales de conexión en `config/config.ini`.
 
 Ejecutar los comandos desde la carpeta raíz de este repositorio, donde están `requirements.txt` y los scripts.
 
-Preparación en Windows (PowerShell):
+Preparación (PowerShell):
 
 ```powershell
 python -m venv .venv
@@ -76,7 +73,7 @@ En Linux o macOS: `export API_URL="http://127.0.0.1:8001"`.
 - El evento contiene únicamente `id`, `lat`, `lon` y `fecha_utc`. Cada suscriptor calcula la distancia con Haversine (radio terrestre de 6371 km). Solo si la distancia es estrictamente menor a 500 km consulta `GET /sismos/{id}`; en otro caso registra el evento como ignorado.
 - Los mensajes usan `auto_ack=True`: no hay reentrega si el procesamiento falla ni recuperación de eventos publicados mientras el suscriptor está desconectado.
 - Las consultas HTTP tienen un timeout de 5 segundos. Ante un `404`, timeout o servicio no disponible se registra el error y se continúa escuchando, sin reintentos.
-- `sismos.json` es un catálogo local de demostración. El servicio lo relee en cada consulta para detectar los registros agregados por el notificador. Se debe usar un solo notificador y evitar escrituras concurrentes; no hay base de datos.
+- `sismos.json` es un catálogo local de demostración. El servicio lo relee en cada consulta para detectar los registros agregados por el notificador.
 - Sin argumento, las cinco ciudades comparten un proceso y una conexión, con una cola por ciudad. Ejecutarlas por separado permite aislar sus procesos. El notificador abre una conexión por envío para evitar conexiones inactivas durante el menú.
 - Los logs incluyen fecha, componente y colores para distinguir eventos de interés e ignorados. El servicio HTTP no incluye autenticación ni TLS; la conexión a CloudAMQP usa TLS. Es una demostración académica, sin garantías de entrega para alertas reales.
-- El informe de la tarea está incluido en [Tarea1-YohannsJara.pdf](Tarea1-YohannsJara.pdf).
+- El informe de la tarea está incluido en [Tarea1-YohannsJara.pdf](Tarea1-YohannsJara.pdf) (creí que había que hacer un informe y subirlo todo en un comprimido en aula xd, mala mía, lo dejo igual, y al final está la ``discusión`` y el ``Back of the Envelope`` ).
